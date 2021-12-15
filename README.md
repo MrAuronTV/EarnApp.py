@@ -19,6 +19,7 @@ else:
     print("Failed to log in")
 ```
 5) Now, you can use whatever functions you like, for example `print("Money: " + str(user.money()))`
+6) Add device rename possibility `print(user.RenameDevice("SDK-Node","Device Name"))`
 	
 ## Setup
 To run this project, install it using pip:
