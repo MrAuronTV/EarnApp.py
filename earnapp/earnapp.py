@@ -15,7 +15,7 @@ def makeEarnAppRequest(endpoint: str, reqType: str, cookies: dict, data: dict = 
         resp = requests.get("https://earnapp.com/dashboard/api/" + endpoint + "?appid=earnapp_dashboard", cookies=cookies) # do the GET request with the cookies required to the correct endpoint
     elif reqType == "POST": # if we need to do a POST request
         resp = requests.post("https://earnapp.com/dashboard/api/" + endpoint + "?appid=earnapp_dashboard", cookies=cookies, data=data) # do the POST request with the cookies required to the correct endpoint with the data
-    elif reqType == "PUT": # if we need to do a PUT request
+    elif reqType == "PUT": # if we need to do a PUT request 
         resp = requests.put("https://earnapp.com/dashboard/api/" + endpoint + "?appid=earnapp_dashboard", cookies=cookies, data=data) # do the POST request with the cookies required to the correct endpoint with the data
     else:
         return None
