@@ -17,6 +17,8 @@ def makeEarnAppRequest(endpoint: str, reqType: str, cookies: dict, data: dict = 
         resp = requests.post("https://earnapp.com/dashboard/api/" + endpoint + "?appid=earnapp_dashboard", cookies=cookies, data=data) # do the POST request with the cookies required to the correct endpoint with the data
     elif reqType == "PUT": # if we need to do a PUT request 
         resp = requests.put("https://earnapp.com/dashboard/api/" + endpoint + "?appid=earnapp_dashboard", cookies=cookies, data=data) # do the POST request with the cookies required to the correct endpoint with the data
+    elif reqType == "DELETE": # if we need to do a PUT request
+        resp = requests.delete("https://earnapp.com/dashboard/api/" + endpoint + "?appid=earnapp_dashboard", cookies=cookies, data=data) # do the POST request with the cookies required to the correct endpoint with the data
     else:
         return None
     return resp
@@ -142,6 +144,16 @@ class User:
     def RenameDevice(self, deviceID,name) -> dict:
     
         resp = makeEarnAppRequest("device/" + deviceID, "PUT", self.cookies, {"name": name}) # send request
+
+        try:
+            jsonData = resp.json() # attempt to get the JSON data
+        except:
+            return None # if it failed return NoneType
+        return jsonData
+    
+    def deleteDevice(self, deviceID) -> dict:
+    
+        resp = makeEarnAppRequest("device/" + deviceID, "DELETE", self.cookies, {"uuid": deviceID}) # send request
 
         try:
             jsonData = resp.json() # attempt to get the JSON data
