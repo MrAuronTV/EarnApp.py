@@ -29,7 +29,7 @@ To run this project, install it using pip:
 $ pip3 install earnapp
 ```
 
-ETH : 0x4190Ce2b47b5485Af12aa0ad4981a6AA93c650b8
-BTC : 33rVsFxnCTh5sJpeZtJ9b1WQJFb8StadfB
-DOGE : DMsazDrRK3NWz23epmotSLHcF3zkkQWwUw
+ETH: 0x4190Ce2b47b5485Af12aa0ad4981a6AA93c650b8    
+BTC: 33rVsFxnCTh5sJpeZtJ9b1WQJFb8StadfB    
+DOGE: DMsazDrRK3NWz23epmotSLHcF3zkkQWwUw    
 
